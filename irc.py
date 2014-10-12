@@ -13,7 +13,7 @@ class IRCclient:
     def connect(self):
         self.irc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.irc.connect((self.server, self.port))
-        self.irc.send("NICK " + "lunsjbtt" + "\r\n")
+        self.irc.send("NICK " + self.nick+ "\r\n")
         self.irc.send("USER " + self.user + "\r\n")
         print(self.irc.recv(4096))
 
@@ -28,3 +28,6 @@ class IRCclient:
 
     def pong(self, server):
         self.irc.send("PONG " + server + "\r\n")
+
+    def block(self, block):
+	self.irc.setblocking(block)
