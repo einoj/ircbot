@@ -36,7 +36,7 @@ while True:
             print a
         else:
             print "no screen"
-        time.sleep(1.2)
+        time.sleep(12)
         try:
             data = bot.recv(4096)
         except:
