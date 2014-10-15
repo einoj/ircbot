@@ -21,7 +21,7 @@ class IRCclient:
         self.irc.send("JOIN " + channel + "\r\n")
 
     def message(self, msgtarget, msg):
-        self.irc.send("PRIVMSG " + msgtarget + " " + msg)
+        self.irc.send("PRIVMSG " + msgtarget + " :" + msg + "\r\n")
 
     def recv(self, buflen):
         return self.irc.recv(buflen)
