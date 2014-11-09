@@ -1,9 +1,9 @@
 from irc import IRCclient
 
 
-nick = "lunsjbtt"
-user = "lunvk 0 * :lunsh"
-server = "irc.ifi.uio.no"
+nick = "charmcmd"
+user = "lunvk 0 * :CHARM"
+server = "sinisalo.freenode.net"
 port = 6667
 channel = "#einojo"
 bot = IRCclient(server, port, nick, user)
@@ -14,3 +14,4 @@ while True:
 
     if data.find("PING") != -1:
         bot.pong(data.split()[1])
+    bot.message("#einojo", "test")
